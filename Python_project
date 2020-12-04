@@ -1,0 +1,55 @@
+# Give number between 0 to 1000 and the code will guess with Binary Algorithm
+import math
+
+def binary():
+    print('Input number between 0 and 1000:')
+    target = int(input(''))
+    guess = 500
+    b = 1000
+    total_guess = []
+    if target == 500:
+        return 'My Guess is 500'
+    else:
+        if target > 500:
+            while target != guess:
+                while guess > target:
+                    b = guess
+                    guess = b - ((b - a) // 2)
+                    total_guess.append(guess)
+                    if target == guess:
+                        break
+                while guess < target:
+                    a = guess
+                    guess = b - ((b - a) // 2)
+                    total_guess.append(guess)
+                    if target == guess:
+                        break
+            print('Number of Tries:', len(total_guess))
+            print(total_guess)
+            return 'My guess is', guess
+
+        elif target < 500:
+            b = 50
+            a = 0
+            while target != guess:
+                while guess > target:
+                    b = guess
+                    guess = b - ((b - a) // 2)
+                    total_guess.append(guess)
+                    if target == guess:
+                        break
+                while guess < target:
+                    a = guess
+                    guess = b - ((b - a) // 2)
+                    total_guess.append(guess)
+                    if target == guess:
+                        break
+
+            print('Number of Tries:', len(total_guess))
+            print(total_guess)
+            return 'My guess is', guess
+        else:
+            print('Please enter the target less than 1000.')
+
+
+print(binary())
